@@ -1,0 +1,974 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "nlu": {
+      "useNoneFeature": true
+    },
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager",
+      "useNoneFeature": true
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "useNoneFeature": true,
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "esta,livr,o,rasg": {
+            "intent": "acervo",
+            "domain": "default"
+          },
+          "falt,livr,no,pagin": {
+            "intent": "acervo",
+            "domain": "default"
+          },
+          "de,gost,livr,suger,um": {
+            "intent": "acervo",
+            "domain": "default"
+          },
+          "de,fic,histor,livr,o,onde": {
+            "intent": "acervo",
+            "domain": "default"
+          },
+          "livr,muit,velh": {
+            "intent": "acervo",
+            "domain": "default"
+          },
+          "a,car,esta,muit,mult": {
+            "intent": "financeiro",
+            "domain": "default"
+          },
+          "da,mult,o,quer,sab,valor": {
+            "intent": "financeiro",
+            "domain": "default"
+          },
+          "bolet,com,o,pag": {
+            "intent": "financeiro",
+            "domain": "default"
+          },
+          "div,pendent,tenh,uma": {
+            "intent": "financeiro",
+            "domain": "default"
+          },
+          "cobranc,errad": {
+            "intent": "financeiro",
+            "domain": "default"
+          },
+          "esta,lent,o,sit": {
+            "intent": "tecnico",
+            "domain": "default"
+          },
+          "consig,faz,login,nao": {
+            "intent": "tecnico",
+            "domain": "default"
+          },
+          "a,esquec,minh,senh": {
+            "intent": "tecnico",
+            "domain": "default"
+          },
+          "conect,nao,o,wif": {
+            "intent": "tecnico",
+            "domain": "default"
+          },
+          "erro,no,sistem": {
+            "intent": "tecnico",
+            "domain": "default"
+          },
+          "atend,bom": {
+            "intent": "elogio",
+            "domain": "default"
+          },
+          "bibliotec,da,gost,muit": {
+            "intent": "elogio",
+            "domain": "default"
+          },
+          "ajud,obrig,pel": {
+            "intent": "elogio",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "acervo": "default",
+          "financeiro": "default",
+          "tecnico": "default",
+          "elogio": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "o livro está rasgado",
+            "intent": "acervo"
+          },
+          {
+            "domain": "default",
+            "utterance": "faltam páginas no livro",
+            "intent": "acervo"
+          },
+          {
+            "domain": "default",
+            "utterance": "gostaria de sugerir um livro",
+            "intent": "acervo"
+          },
+          {
+            "domain": "default",
+            "utterance": "onde fica o livro de história",
+            "intent": "acervo"
+          },
+          {
+            "domain": "default",
+            "utterance": "livro muito velho",
+            "intent": "acervo"
+          },
+          {
+            "domain": "default",
+            "utterance": "a multa está muito cara",
+            "intent": "financeiro"
+          },
+          {
+            "domain": "default",
+            "utterance": "quero saber o valor da multa",
+            "intent": "financeiro"
+          },
+          {
+            "domain": "default",
+            "utterance": "como pago o boleto",
+            "intent": "financeiro"
+          },
+          {
+            "domain": "default",
+            "utterance": "tenho uma dívida pendente",
+            "intent": "financeiro"
+          },
+          {
+            "domain": "default",
+            "utterance": "cobrança errada",
+            "intent": "financeiro"
+          },
+          {
+            "domain": "default",
+            "utterance": "o site está lento",
+            "intent": "tecnico"
+          },
+          {
+            "domain": "default",
+            "utterance": "não consigo fazer login",
+            "intent": "tecnico"
+          },
+          {
+            "domain": "default",
+            "utterance": "esqueci a minha senha",
+            "intent": "tecnico"
+          },
+          {
+            "domain": "default",
+            "utterance": "o wifi não conecta",
+            "intent": "tecnico"
+          },
+          {
+            "domain": "default",
+            "utterance": "erro no sistema",
+            "intent": "tecnico"
+          },
+          {
+            "domain": "default",
+            "utterance": "bom atendimento",
+            "intent": "elogio"
+          },
+          {
+            "domain": "default",
+            "utterance": "gosto muito da biblioteca",
+            "intent": "elogio"
+          },
+          {
+            "domain": "default",
+            "utterance": "obrigado pela ajuda",
+            "intent": "elogio"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "o": 1,
+              "livr": 1,
+              "esta": 1,
+              "rasg": 1,
+              "falt": 1,
+              "pagin": 1,
+              "no": 1,
+              "gost": 1,
+              "de": 1,
+              "suger": 1,
+              "um": 1,
+              "onde": 1,
+              "fic": 1,
+              "histor": 1,
+              "muit": 1,
+              "velh": 1,
+              "a": 1,
+              "mult": 1,
+              "car": 1,
+              "quer": 1,
+              "sab": 1,
+              "valor": 1,
+              "da": 1,
+              "com": 1,
+              "pag": 1,
+              "bolet": 1,
+              "tenh": 1,
+              "uma": 1,
+              "div": 1,
+              "pendent": 1,
+              "cobranc": 1,
+              "errad": 1,
+              "sit": 1,
+              "lent": 1,
+              "nao": 1,
+              "consig": 1,
+              "faz": 1,
+              "login": 1,
+              "esquec": 1,
+              "minh": 1,
+              "senh": 1,
+              "wif": 1,
+              "conect": 1,
+              "erro": 1,
+              "sistem": 1,
+              "bom": 1,
+              "atend": 1,
+              "bibliotec": 1,
+              "obrig": 1,
+              "pel": 1,
+              "ajud": 1
+            },
+            "intents": {
+              "acervo": 1,
+              "financeiro": 1,
+              "tecnico": 1,
+              "elogio": 1
+            },
+            "intentFeatures": {
+              "acervo": {
+                "o": 1,
+                "livr": 1,
+                "esta": 1,
+                "rasg": 1,
+                "falt": 1,
+                "pagin": 1,
+                "no": 1,
+                "gost": 1,
+                "de": 1,
+                "suger": 1,
+                "um": 1,
+                "onde": 1,
+                "fic": 1,
+                "histor": 1,
+                "muit": 1,
+                "velh": 1
+              },
+              "financeiro": {
+                "a": 1,
+                "mult": 1,
+                "esta": 1,
+                "muit": 1,
+                "car": 1,
+                "quer": 1,
+                "sab": 1,
+                "o": 1,
+                "valor": 1,
+                "da": 1,
+                "com": 1,
+                "pag": 1,
+                "bolet": 1,
+                "tenh": 1,
+                "uma": 1,
+                "div": 1,
+                "pendent": 1,
+                "cobranc": 1,
+                "errad": 1
+              },
+              "tecnico": {
+                "o": 1,
+                "sit": 1,
+                "esta": 1,
+                "lent": 1,
+                "nao": 1,
+                "consig": 1,
+                "faz": 1,
+                "login": 1,
+                "esquec": 1,
+                "a": 1,
+                "minh": 1,
+                "senh": 1,
+                "wif": 1,
+                "conect": 1,
+                "erro": 1,
+                "no": 1,
+                "sistem": 1
+              },
+              "elogio": {
+                "bom": 1,
+                "atend": 1,
+                "gost": 1,
+                "muit": 1,
+                "da": 1,
+                "bibliotec": 1,
+                "obrig": 1,
+                "pel": 1,
+                "ajud": 1
+              }
+            },
+            "featuresToIntent": {
+              "o": [
+                "acervo",
+                "financeiro",
+                "tecnico"
+              ],
+              "livr": [
+                "acervo"
+              ],
+              "esta": [
+                "acervo",
+                "financeiro",
+                "tecnico"
+              ],
+              "rasg": [
+                "acervo"
+              ],
+              "falt": [
+                "acervo"
+              ],
+              "pagin": [
+                "acervo"
+              ],
+              "no": [
+                "acervo",
+                "tecnico"
+              ],
+              "gost": [
+                "acervo",
+                "elogio"
+              ],
+              "de": [
+                "acervo"
+              ],
+              "suger": [
+                "acervo"
+              ],
+              "um": [
+                "acervo"
+              ],
+              "onde": [
+                "acervo"
+              ],
+              "fic": [
+                "acervo"
+              ],
+              "histor": [
+                "acervo"
+              ],
+              "muit": [
+                "acervo",
+                "financeiro",
+                "elogio"
+              ],
+              "velh": [
+                "acervo"
+              ],
+              "a": [
+                "financeiro",
+                "tecnico"
+              ],
+              "mult": [
+                "financeiro"
+              ],
+              "car": [
+                "financeiro"
+              ],
+              "quer": [
+                "financeiro"
+              ],
+              "sab": [
+                "financeiro"
+              ],
+              "valor": [
+                "financeiro"
+              ],
+              "da": [
+                "financeiro",
+                "elogio"
+              ],
+              "com": [
+                "financeiro"
+              ],
+              "pag": [
+                "financeiro"
+              ],
+              "bolet": [
+                "financeiro"
+              ],
+              "tenh": [
+                "financeiro"
+              ],
+              "uma": [
+                "financeiro"
+              ],
+              "div": [
+                "financeiro"
+              ],
+              "pendent": [
+                "financeiro"
+              ],
+              "cobranc": [
+                "financeiro"
+              ],
+              "errad": [
+                "financeiro"
+              ],
+              "sit": [
+                "tecnico"
+              ],
+              "lent": [
+                "tecnico"
+              ],
+              "nao": [
+                "tecnico"
+              ],
+              "consig": [
+                "tecnico"
+              ],
+              "faz": [
+                "tecnico"
+              ],
+              "login": [
+                "tecnico"
+              ],
+              "esquec": [
+                "tecnico"
+              ],
+              "minh": [
+                "tecnico"
+              ],
+              "senh": [
+                "tecnico"
+              ],
+              "wif": [
+                "tecnico"
+              ],
+              "conect": [
+                "tecnico"
+              ],
+              "erro": [
+                "tecnico"
+              ],
+              "sistem": [
+                "tecnico"
+              ],
+              "bom": [
+                "elogio"
+              ],
+              "atend": [
+                "elogio"
+              ],
+              "bibliotec": [
+                "elogio"
+              ],
+              "obrig": [
+                "elogio"
+              ],
+              "pel": [
+                "elogio"
+              ],
+              "ajud": [
+                "elogio"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "useNoneFeature": true,
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "o",
+                "livr",
+                "esta",
+                "rasg",
+                "falt",
+                "pagin",
+                "no",
+                "gost",
+                "de",
+                "suger",
+                "um",
+                "onde",
+                "fic",
+                "histor",
+                "muit",
+                "velh",
+                "a",
+                "mult",
+                "car",
+                "quer",
+                "sab",
+                "valor",
+                "da",
+                "com",
+                "pag",
+                "bolet",
+                "tenh",
+                "uma",
+                "div",
+                "pendent",
+                "cobranc",
+                "errad",
+                "sit",
+                "lent",
+                "nao",
+                "consig",
+                "faz",
+                "login",
+                "esquec",
+                "minh",
+                "senh",
+                "wif",
+                "conect",
+                "erro",
+                "sistem",
+                "bom",
+                "atend",
+                "bibliotec",
+                "obrig",
+                "pel",
+                "ajud",
+                "nonefeature"
+              ],
+              "intents": [
+                "acervo",
+                "financeiro",
+                "tecnico",
+                "elogio",
+                "None"
+              ],
+              "perceptrons": [
+                [
+                  0.70261549949646,
+                  9.273809432983398,
+                  0.8766217231750488,
+                  2.751145124435425,
+                  1.7516127824783325,
+                  1.7516127824783325,
+                  0.8316609263420105,
+                  0.2411809116601944,
+                  1.7764464616775513,
+                  1.1579961776733398,
+                  1.1579961776733398,
+                  0.6186126470565796,
+                  0.6186126470565796,
+                  0.6186126470565796,
+                  1.3316844701766968,
+                  2.993497848510742,
+                  -0.9761436581611633,
+                  -1.1641205549240112,
+                  -0.7458483576774597,
+                  -0.330180823802948,
+                  -0.330180823802948,
+                  -0.330180823802948,
+                  -1.334987759590149,
+                  -0.5942440032958984,
+                  -0.5942440032958984,
+                  -0.5942440032958984,
+                  -0.3148541748523712,
+                  -0.3148541748523712,
+                  -0.3148541748523712,
+                  -0.3148541748523712,
+                  -0.4352371096611023,
+                  -0.4352371096611023,
+                  -1.1291033029556274,
+                  -1.1291033029556274,
+                  -0.7095614075660706,
+                  -0.2145005762577057,
+                  -0.2145005762577057,
+                  -0.2145005762577057,
+                  -0.18028414249420166,
+                  -0.18028414249420166,
+                  -0.18028414249420166,
+                  -0.42747408151626587,
+                  -0.42747408151626587,
+                  -0.8995218873023987,
+                  -0.8995218873023987,
+                  -0.37850433588027954,
+                  -0.37850433588027954,
+                  -0.9167157411575317,
+                  -0.272878497838974,
+                  -0.272878497838974,
+                  -0.272878497838974,
+                  -0.6536879539489746,
+                  0.6776842361579369
+                ],
+                [
+                  1.0255844593048096,
+                  -2.540476083755493,
+                  0.42222920060157776,
+                  -1.1312702894210815,
+                  -0.09886323660612106,
+                  -0.09886323660612106,
+                  -0.881770133972168,
+                  -1.7886221408843994,
+                  -0.5256215929985046,
+                  -0.07165014743804932,
+                  -0.07165014743804932,
+                  -0.4172280728816986,
+                  -0.4172280728816986,
+                  -0.4172280728816986,
+                  1.034159779548645,
+                  -0.6640275716781616,
+                  1.9900707006454468,
+                  5.288651943206787,
+                  3.404480218887329,
+                  1.883579134941101,
+                  1.883579134941101,
+                  1.883579134941101,
+                  0.17856505513191223,
+                  3.703428268432617,
+                  3.703428268432617,
+                  3.703428268432617,
+                  3.034053325653076,
+                  3.034053325653076,
+                  3.034053325653076,
+                  3.034053325653076,
+                  6.0516510009765625,
+                  6.0516510009765625,
+                  -1.8332247734069824,
+                  -1.8332247734069824,
+                  -1.5866566896438599,
+                  -0.4577542543411255,
+                  -0.4577542543411255,
+                  -0.4577542543411255,
+                  -1.401553988456726,
+                  -1.401553988456726,
+                  -1.401553988456726,
+                  -1.0254135131835938,
+                  -1.0254135131835938,
+                  -0.7290447950363159,
+                  -0.7290447950363159,
+                  -1.1087400913238525,
+                  -1.1087400913238525,
+                  -1.6833385229110718,
+                  -0.7551500201225281,
+                  -0.7551500201225281,
+                  -0.7551500201225281,
+                  -2.004085063934326,
+                  2.138731453558938
+                ],
+                [
+                  2.344966173171997,
+                  -3.6529312133789062,
+                  1.1666373014450073,
+                  -1.8551377058029175,
+                  -0.9565024375915527,
+                  -0.9565024375915527,
+                  3.4489188194274902,
+                  -0.5990231037139893,
+                  -0.6257461905479431,
+                  -0.1184070035815239,
+                  -0.1184070035815239,
+                  -0.44678017497062683,
+                  -0.44678017497062683,
+                  -0.44678017497062683,
+                  -1.9351173639297485,
+                  -0.07875862717628479,
+                  2.047718048095703,
+                  -2.0111114978790283,
+                  -1.345321774482727,
+                  -0.5948031544685364,
+                  -0.5948031544685364,
+                  -0.5948031544685364,
+                  -1.0867633819580078,
+                  -1.4714032411575317,
+                  -1.4714032411575317,
+                  -1.4714032411575317,
+                  -0.5537006855010986,
+                  -0.5537006855010986,
+                  -0.5537006855010986,
+                  -0.5537006855010986,
+                  -1.0177428722381592,
+                  -1.0177428722381592,
+                  4.385152339935303,
+                  4.385152339935303,
+                  4.944262504577637,
+                  2.4463720321655273,
+                  2.4463720321655273,
+                  2.4463720321655273,
+                  3.4113080501556396,
+                  3.4113080501556396,
+                  3.4113080501556396,
+                  2.4973092079162598,
+                  2.4973092079162598,
+                  4.414402484893799,
+                  4.414402484893799,
+                  -1.1113721132278442,
+                  -1.1113721132278442,
+                  -0.4105266034603119,
+                  -0.818507969379425,
+                  -0.818507969379425,
+                  -0.818507969379425,
+                  -1.9241421222686768,
+                  1.9966842431874454
+                ],
+                [
+                  -1.4729743003845215,
+                  -2.740973949432373,
+                  -0.9542475342750549,
+                  -0.11465618759393692,
+                  -0.2311757355928421,
+                  -0.2311757355928421,
+                  -0.9071573615074158,
+                  3.073789596557617,
+                  -0.9475091099739075,
+                  -0.8636149764060974,
+                  -0.8636149764060974,
+                  -0.05561872571706772,
+                  -0.05561872571706772,
+                  -0.05561872571706772,
+                  1.9192272424697876,
+                  -1.3029597997665405,
+                  -1.1133852005004883,
+                  -1.5271369218826294,
+                  -0.7158004641532898,
+                  -0.77503901720047,
+                  -0.77503901720047,
+                  -0.77503901720047,
+                  3.198467493057251,
+                  -0.2706102430820465,
+                  -0.2706102430820465,
+                  -0.2706102430820465,
+                  -0.5576526522636414,
+                  -0.5576526522636414,
+                  -0.5576526522636414,
+                  -0.5576526522636414,
+                  -1.0649230480194092,
+                  -1.0649230480194092,
+                  -0.04125942662358284,
+                  -0.04125942662358284,
+                  -0.6258182525634766,
+                  -0.5220140218734741,
+                  -0.5220140218734741,
+                  -0.5220140218734741,
+                  -0.36111998558044434,
+                  -0.36111998558044434,
+                  -0.36111998558044434,
+                  -0.09102685004472733,
+                  -0.09102685004472733,
+                  -0.6350222229957581,
+                  -0.6350222229957581,
+                  6.069887638092041,
+                  6.069887638092041,
+                  3.975985050201416,
+                  4.053343296051025,
+                  4.053343296051025,
+                  4.053343296051025,
+                  -1.9858587980270386,
+                  2.1071524960285983
+                ],
+                [
+                  -1.0736116170883179,
+                  -0.929212749004364,
+                  -0.49722957611083984,
+                  -0.07759670168161392,
+                  -0.20480459928512573,
+                  -0.20480459928512573,
+                  -0.8269253373146057,
+                  -0.5229936838150024,
+                  -0.25971683859825134,
+                  -0.20939625799655914,
+                  -0.20939625799655914,
+                  -0.04187573492527008,
+                  -0.04187573492527008,
+                  -0.04187573492527008,
+                  -0.8114389181137085,
+                  -0.36285364627838135,
+                  -0.6226093173027039,
+                  -0.2562604248523712,
+                  -0.12443727999925613,
+                  -0.1231079250574112,
+                  -0.1231079250574112,
+                  -0.1231079250574112,
+                  -0.4362429976463318,
+                  -0.3474249839782715,
+                  -0.3474249839782715,
+                  -0.3474249839782715,
+                  -0.5257031917572021,
+                  -0.5257031917572021,
+                  -0.5257031917572021,
+                  -0.5257031917572021,
+                  -1.010270595550537,
+                  -1.010270595550537,
+                  -0.2659001648426056,
+                  -0.2659001648426056,
+                  -0.6642618775367737,
+                  -0.4775985777378082,
+                  -0.4775985777378082,
+                  -0.4775985777378082,
+                  -0.4894566833972931,
+                  -0.4894566833972931,
+                  -0.4894566833972931,
+                  -0.1837005317211151,
+                  -0.1837005317211151,
+                  -0.6204510927200317,
+                  -0.6204510927200317,
+                  -0.9970174431800842,
+                  -0.9970174431800842,
+                  -0.3117399513721466,
+                  -0.6844063997268677,
+                  -0.6844063997268677,
+                  -0.6844063997268677,
+                  11.353665351867676,
+                  2.1392704578140043
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "o livro está rasgado"
+      ],
+      [
+        "pt",
+        "faltam páginas no livro"
+      ],
+      [
+        "pt",
+        "gostaria de sugerir um livro"
+      ],
+      [
+        "pt",
+        "onde fica o livro de história"
+      ],
+      [
+        "pt",
+        "livro muito velho"
+      ],
+      [
+        "pt",
+        "a multa está muito cara"
+      ],
+      [
+        "pt",
+        "quero saber o valor da multa"
+      ],
+      [
+        "pt",
+        "como pago o boleto"
+      ],
+      [
+        "pt",
+        "tenho uma dívida pendente"
+      ],
+      [
+        "pt",
+        "cobrança errada"
+      ],
+      [
+        "pt",
+        "o site está lento"
+      ],
+      [
+        "pt",
+        "não consigo fazer login"
+      ],
+      [
+        "pt",
+        "esqueci a minha senha"
+      ],
+      [
+        "pt",
+        "o wifi não conecta"
+      ],
+      [
+        "pt",
+        "erro no sistema"
+      ],
+      [
+        "pt",
+        "bom atendimento"
+      ],
+      [
+        "pt",
+        "gosto muito da biblioteca"
+      ],
+      [
+        "pt",
+        "obrigado pela ajuda"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

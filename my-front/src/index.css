@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+
+/* Fade-in suave cinematográfico */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.fade-in {
+  animation: fadeIn 1.3s ease-out forwards;
+}
+
+/* Floating */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Partículas neon */
+@keyframes particleFloat {
+  0% { opacity: 0; transform: translateY(0) translateX(0) scale(0.6); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-160px) translateX(60px) scale(1.4); }
+}
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 80, 255, 0.65);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: particleFloat 7s linear infinite;
+}
+
+/* --------------------------- */
+/*        AURORA FORTNITE      */
+/* --------------------------- */
+
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+@keyframes auroraWaves {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-40px) translateX(40px) rotate(10deg); opacity: 0.9; }
+  100% { transform: translateY(0) translateX(0) rotate(-5deg); opacity: 0.6; }
+}
+
+.aurora-layer {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  filter: blur(120px);
+  animation: auroraWaves 9s ease-in-out infinite alternate;
+}
+
+/* Cores neon estilo Fortnite */
+.aurora-1 { 
+  background: radial-gradient(circle, rgba(157,0,255,0.7), rgba(0,0,0,0));
+  top: -20%; 
+  left: -10%;
+}
+.aurora-2 { 
+  background: radial-gradient(circle, rgba(90,0,255,0.7), rgba(0,0,0,0));
+  top: 30%; 
+  right: -15%; 
+  animation-delay: 2s;
+}
+.aurora-3 { 
+  background: radial-gradient(circle, rgba(255,0,180,0.7), rgba(0,0,0,0));
+  bottom: -25%; 
+  left: 25%; 
+  animation-delay: 4s;
+}
+/* esconder scrollbar horizontal */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
