@@ -11,7 +11,7 @@ import capa5 from "../assets/covers/capa5.jpeg";
 
 // 2. CRIAÇÃO DO ARRAY DE COVERS
 const carouselCovers = [
-  capa1, // Verifique se estas variáveis (capa1, capa2, etc.) são as corretas
+  capa1, 
   capa2,
   capa3,
   capa4,
@@ -21,12 +21,12 @@ const carouselCovers = [
   capa5,
   capa2,
 ];
-// ... restante do código
+
 
 export default function Home() {
   const [showAbout, setShowAbout] = useState(false);
 
-  // ... (código das partículas e animações) ...
+  
 
   const particles = Array.from({ length: 60 }).map((_, i) => ({
     top: `${Math.random() * 100}%`,

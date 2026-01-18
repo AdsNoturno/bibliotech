@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Book } from "../models/Book";
 
 export interface AuthenticatedRequest extends Request {
-  user?: any; // Usuário completo do MongoDB (inclui isAdmin)
+  user?: any; // Usuário completo do MongoDB
 }
 
 const BASE_URL =

@@ -1,9 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { books } from "../data/books"; // Removemos a extensão .ts da importação
-// import "./BookDetail.css"; // Ajuste aqui: provavelmete você queria importar o CSS, não o .jsx
+import { books } from "../data/books"; 
 
 export default function BookDetail() {
-  const { id } = useParams(); // Tipagem removida aqui
+  const { id } = useParams(); 
   const book = books.find(b => b.id === Number(id));
 
   if (!book) return <p className="p-8 text-purple-200">Livro não encontrado!</p>;
@@ -29,7 +28,7 @@ export default function BookDetail() {
         <a
           href={book.readLink}
           target="_blank"
-          rel="noopener noreferrer" /* Boa prática de segurança para links externos */
+          rel="noopener noreferrer" 
           className="block w-full text-center bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-semibold transition mb-4"
         >
           Ler agora

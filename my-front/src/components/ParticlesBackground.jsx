@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 export default function ParticlesBackground() {
-  // Removemos a tipagem ": any" do parâmetro engine
+  
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine); // Carrega engine completa
   }, []);

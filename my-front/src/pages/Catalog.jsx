@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ChatWidget from "../components/ChatWidget";
 import { getBooks } from "../service/api";
-import { isAdmin } from "../service/auth"; // função que criamos para checar admin
+import { isAdmin } from "../service/auth"; 
 
 const Catalog = () => {
   const [books, setBooks] = useState([]);

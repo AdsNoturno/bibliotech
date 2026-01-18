@@ -36,7 +36,7 @@ export const logout = () => {
   localStorage.removeItem('token');
 };
 
-// ✅ Novo método para pegar o ID do usuário
+
 export const getCurrentUserId = () => {
   const user = getUser();
   return user?.id || null;

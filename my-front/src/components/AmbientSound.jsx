@@ -8,7 +8,7 @@ export default function AmbientSound() {
     audio.play().catch(() => {}); // evita erro se autoplay for bloqueado
     
     // Opcional: Retornar uma função de limpeza é uma boa prática 
-    // para parar o áudio se o componente for desmontado (ex: mudar de página)
+   
     return () => {
       audio.pause();
       audio.currentTime = 0;

@@ -1,10 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Primeiro os imports de bibliotecas externas */
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 
+/* Depois as diretivas do Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Fade-in suave cinematográfico */
 @keyframes fadeIn {
