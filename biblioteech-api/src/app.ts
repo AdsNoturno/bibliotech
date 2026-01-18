@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import bookRoutes from './routes/bookRoutes'; 
 import authRoutes from './authRoutes'; 
 import feedbackRoutes from './routes/feedbackRoutes';
-
 
 // Cria a instância principal do Express
 const app = express();
@@ -12,30 +12,22 @@ const app = express();
 // MIDDLEWARES GLOBAIS
 // =====================================================
 
-// 1. Configuração Robusta do CORS
-// Permite que o Front-End (rodando na porta 5173 ou similar, geralmente do Vite) se comunique.
-const allowedOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173']; // Adicione outras origens se necessário
+// 1. Configuração de CORS simplificada para Produção
+// O origin: true reflete a origem da requisição, facilitando o uso com Netlify
+app.use(cors({
+  origin: [
+    'http://localhost:5173', 
+    'http://127.0.0.1:5173', 
+    'https://bibliotechclient.netlify.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 
-const corsOptions = {
-  origin: (origin: any, callback: any) => {
-    // Permite requisições sem origem (como apps mobile ou curl)
-    if (!origin) return callback(null, true); 
-    // Permite origens na lista
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Permite todos os métodos necessários
-  credentials: true, // Importante para cookies/auth
-};
-
-app.use(cors(corsOptions)); // Aplica a política de CORS
 app.use(express.json()); // Body parser para JSON
 
-// 2. Middleware de Segurança (Helmet) - BOA PRÁTICA
-
+// 2. Servir arquivos estáticos (Uploads de capas de livros, etc)
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 // =====================================================
 // CONEXÃO DE ROTAS
@@ -45,6 +37,7 @@ app.get('/', (_req, res) => {
     res.send({ message: 'API da Biblioteca rodando com sucesso!' });
 });
 
+// Suas rotas principais
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes); 
 app.use('/api/feedback', feedbackRoutes);
