@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Base URL do backend (ajuste a porta se necessário)
 const API = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://bibliotech-api.onrender.com",
   timeout: 5000, // 5s de timeout
 });
 
