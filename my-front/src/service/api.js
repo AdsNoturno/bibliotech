@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// Base URL do backend (ajuste a porta se necessário)
+// 1. AJUSTE DA URL: Adicionado o /api no final
 const API = axios.create({
-  baseURL: "https://bibliotech-api.onrender.com",
-  timeout: 5000, // 5s de timeout
+  baseURL: "https://bibliotech-api.onrender.com/api", 
+  timeout: 5000, 
 });
 
-// Interceptor para enviar token automaticamente em rotas protegidas
+// Interceptor para enviar token automaticamente
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -22,37 +22,36 @@ API.interceptors.request.use(
 // FUNÇÕES DE LIVROS
 // ======================
 
-// Buscar todos os livros
+// O axios já usa a baseURL, então chamamos apenas /books
 export const getBooks = async () => {
   const res = await API.get("/books");
   return res.data;
 };
 
-// Buscar livro por ID
 export const getBookById = async (id) => {
   const res = await API.get(`/books/${id}`);
   return res.data;
 };
 
-// Criar livro (rota protegida)
 export const createBook = async (payload) => {
   const res = await API.post("/books", payload);
   return res.data;
 };
 
-  
-
-// Atualizar livro (rota protegida)
 export const updateBook = async (id, payload) => {
   const res = await API.put(`/books/${id}`, payload);
   return res.data;
 };
 
-// Deletar livro (rota protegida)
 export const deleteBook = async (id) => {
   const res = await API.delete(`/books/${id}`);
   return res.data;
 };
+
+// ======================
+// FUNÇÕES DE USUÁRIO
+// ======================
+
 export const getCurrentUser = () => {
   const user = JSON.parse(localStorage.getItem('user') || '{}');
   return user;
@@ -60,11 +59,7 @@ export const getCurrentUser = () => {
 
 export const isAdmin = () => {
   const user = getCurrentUser();
-  return user?.isAdmin === true;
+  return user?.role === 'admin' || user?.isAdmin === true;
 };
 
-
-// ======================
-// EXPORT DEFAULT
-// ======================
 export default API;
